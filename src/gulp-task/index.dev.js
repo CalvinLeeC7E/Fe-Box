@@ -20,7 +20,7 @@ function watch (config) {
 
 function _print (mess) {
   let date = new Date()
-  let dateTime = [date.getHours(), date.getMinutes(), date.getSeconds()].join(':')
+  let dateTime = [date.getHours(), date.getMinutes(), date.getSeconds()].map(item => item.toString().padStart(2, 0)).join(':')
   mess = `[${dateTime}] ${mess}`
   console.log(chalk.cyan(mess))
 }
@@ -31,7 +31,7 @@ async function stdProcess (config) {
 }
 
 function delDiv (config) {
-  return del(config.outputBaseDir)
+  return del(config.outputBaseDir, {force: true})
 }
 
 function sassLoader (config) {
