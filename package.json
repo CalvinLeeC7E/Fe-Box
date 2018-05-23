@@ -1,0 +1,39 @@
+{
+  "name": "fe-gulp",
+  "version": "1.0.0",
+  "description": "i200 FE gulp tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.yuanbei.biz:front-end/fe-gulp.git"
+  },
+  "keywords": [
+    "FE"
+  ],
+  "author": "Calvin",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "autoprefixer": "^7.1.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^8.1.1",
+    "gulp-rev-collector": "^1.2.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0",
+    "postcss-px2rem": "^0.3.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 5 versions",
+    "not ie <= 8"
+  ]
+}
