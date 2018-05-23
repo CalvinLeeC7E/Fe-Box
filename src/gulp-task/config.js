@@ -1,9 +1,9 @@
 const config = {
   dev: {
-    baseDiv: '.',
+    baseDir: '.',
     sass: 'src/css/**/*.scss',
     allCss: 'dev/css/**/*.css',
-    outputBaseDiv: 'dev',
+    outputBaseDir: 'dev',
     cssOutput: 'dev/css'
   }
 }

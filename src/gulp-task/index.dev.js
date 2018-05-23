@@ -6,7 +6,6 @@ const del = require('del')
 const chalk = require('chalk')
 
 function index (config) {
-  _print(config.baseDiv)
   _print('sass loader start...')
   stdProcess(config)
   watch(config)
@@ -32,7 +31,7 @@ async function stdProcess (config) {
 }
 
 function delDiv (config) {
-  return del(config.outputBaseDiv)
+  return del(config.outputBaseDir)
 }
 
 function sassLoader (config) {

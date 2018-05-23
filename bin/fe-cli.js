@@ -1,6 +1,6 @@
 const program = require('commander')
 const chalk = require('chalk')
-const gulpProcess = require('./gulp-task/index')
+const gulpProcess = require('../src/gulp-task/index')
 program
   .version('0.1.0')
   .command('css-dev [targetDir]')
