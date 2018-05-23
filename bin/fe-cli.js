@@ -4,9 +4,12 @@ const chalk = require('chalk')
 const gulpProcess = require('../src/gulp-task/index')
 const httpServer = require('http-server')
 
+program
+  .version(require('../package.json').version)
+  .description('i200 fe-cli')
+
 // css-dev 用来构建开发版css
 program
-  .version('0.1.0')
   .command('css-dev [targetDir]')
   .option('-p, --port <port>', 'use specified port (default: 8080)')
   .option('-h, --host <host>', 'use specified host (default: 0.0.0.0)')
@@ -24,7 +27,6 @@ program
 
 // css-dist 用来构架生产环境css
 program
-  .version('0.1.0')
   .command('css-dist [targetDir]')
   .action((dir = '.') => {
     gulpProcess.pro(dir)

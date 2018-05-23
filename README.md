@@ -1,6 +1,12 @@
+![VERSION](https://img.shields.io/badge/VERSION-1.0.2-blue.svg)
+![VERSION](https://img.shields.io/badge/node-%3E%3D8.0.0-brightgreen.svg)
+
 # fe-cli
 
 前端命令行工具，提供标准化的解决方案
+
+### 注意
+node 版本需要 8.0 以上
 
 ### 安装
 ```bash
