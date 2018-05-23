@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const gulpProcess = require('../src/gulp-task/index')
 const httpServer = require('http-server')
 
+// css-dev 用来构建开发版css
 program
   .version('0.1.0')
   .command('css-dev [targetDir]')
@@ -19,6 +20,14 @@ program
       // start gulp
       gulpProcess.dev(dir)
     })
+  })
+
+// css-dist 用来构架生产环境css
+program
+  .version('0.1.0')
+  .command('css-dist [targetDir]')
+  .action((dir = '.') => {
+    gulpProcess.pro(dir)
   })
 
 program.parse(process.argv)

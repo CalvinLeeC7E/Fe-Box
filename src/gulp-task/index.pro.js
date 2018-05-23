@@ -2,20 +2,14 @@ const gulp = require('gulp')
 const gulpSass = require('gulp-sass')
 const gulpPostcss = require('gulp-postcss')
 const gulpAutoprefixer = require('autoprefixer')
+const gulpCleanCss = require('gulp-clean-css')
 const del = require('del')
-const utlis = require('../../utils/index')
+const utils = require('../../utils/index')
 
 function index (config) {
-  utlis.print('Sass loader start...')
+  utils.print('CSS dist start...')
   stdProcess(config)
-  watch(config)
-}
-
-function watch (config) {
-  let watcher = gulp.watch(config.sass)
-  watcher.on('change', (event) => {
-    stdProcess(config)
-  })
+  utils.print('CSS dist finish!')
 }
 
 async function stdProcess (config) {
@@ -28,12 +22,12 @@ function delDiv (config) {
 }
 
 function sassLoader (config) {
-  // sass -> css -> autoprefixer
+  // sass -> css -> autoprefixer -> mini
   gulp.src(config.sass)
     .pipe(gulpSass())
     .pipe(gulpPostcss([gulpAutoprefixer()]))
+    .pipe(gulpCleanCss())
     .pipe(gulp.dest(config.cssOutput))
-  utlis.print('Sass rebuild finish!')
 }
 
 module.exports = index
