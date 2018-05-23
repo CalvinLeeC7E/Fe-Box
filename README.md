@@ -4,7 +4,7 @@ fe-cli
 
 ## 安装
 ```npm
-cnpm i -g git+https://git@code.yuanbei.biz:front-end/fe-cli.git
+cnpm i -g git+ssh://git@code.yuanbei.biz:front-end/fe-cli.git
 ```
 
 ## 使用
