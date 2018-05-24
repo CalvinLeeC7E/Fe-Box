@@ -13,11 +13,43 @@ function converPath (basePath, configObj) {
   })
 }
 
+function autoReload ({dir, port}) {
+  const bs = require('browser-sync').create()
+  bs.init({
+    server: {
+      baseDir: dir,
+      directory: true
+    },
+    startPath: 'src/index.html',
+    port: port,
+    reloadDelay: 0,
+    timestamps: true,
+    notify: {
+      styles: [
+        "margin: 0",
+        "padding: 5px",
+        "position: fixed",
+        "font-size: 10px",
+        "z-index: 9999",
+        "bottom: 0px",
+        "right: 0px",
+        "border-radius: 0",
+        "border-top-left-radius: 5px",
+        "background-color: rgba(60,197,31,0.5)",
+        "color: white",
+        "text-align: center"
+      ]
+    }
+  })
+  return bs
+}
+
 module.exports = {
-  dev (dir) {
+  dev (dir, options) {
     config.dev.baseDir = dir
     converPath(dir, config.dev)
-    gulpProcessDev(config.dev)
+    let bs = autoReload({dir, port: options.port})
+    gulpProcessDev(config.dev, bs)
   },
   pro (dir) {
     config.pro.baseDir = dir

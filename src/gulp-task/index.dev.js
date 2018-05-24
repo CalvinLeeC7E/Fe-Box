@@ -4,8 +4,10 @@ const gulpPostcss = require('gulp-postcss')
 const gulpAutoprefixer = require('autoprefixer')
 const del = require('del')
 const utlis = require('../../utils/index')
+let bsHandler = null
 
-function index (config) {
+function index (config, bs) {
+  bsHandler = bs
   utlis.print('Sass loader start...')
   stdProcess(config)
   watch(config)
@@ -34,6 +36,11 @@ function sassLoader (config) {
     .pipe(gulpPostcss([gulpAutoprefixer()]))
     .pipe(gulp.dest(config.cssOutput))
   utlis.print('Sass rebuild finish!')
+  liveload()
+}
+
+function liveload () {
+  if (bsHandler) bsHandler.reload()
 }
 
 module.exports = index

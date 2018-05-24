@@ -1,4 +1,4 @@
-![VERSION](https://img.shields.io/badge/VERSION-1.0.2-blue.svg)
+![VERSION](https://img.shields.io/badge/VERSION-1.0.3-blue.svg)
 ![VERSION](https://img.shields.io/badge/node-%3E%3D8.0.0-brightgreen.svg)
 
 # fe-cli
@@ -25,19 +25,15 @@ fe-cli <command> [options]
 * dist输出路径：`dist/css`
 
 工作模式
-* css-dev会自动启动http-server用来方便开发，无需拷贝文件
+* css-dev默认会启动浏览器并加载`src/index.html`，修改sass会自动刷新
 * css-dist输出的文件会自动压缩
 
 css-dev
 
 ```bash
-fe-cli css-dev -p 8080 -a 127.0.0.1 [targetDir]
+fe-cli css-dev [targetDir]
 ```
 > options：
->
-> -p port 默认8080
->
-> -a address 默认0.0.0.0
 >
 > targetDir 选填，项目路径，默认是执行命令的当前面目录
 
