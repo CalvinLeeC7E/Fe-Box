@@ -30,8 +30,8 @@ sass -> css
 * dist输出路径：`dist/css`
 
 sass -> wxss
-* scss输入路径：`page/**/*.scss`
-* scss输出路径：`page`
+* scss输入路径：`pages/**/*.scss`
+* scss输出路径：`pages`
 
 工作模式
 * css-dev 默认会启动浏览器并加载`src/index.html`，修改sass会自动刷新

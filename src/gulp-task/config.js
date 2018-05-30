@@ -17,8 +17,8 @@ const config = {
   },
   wxssDev: {
     baseDir: '.',
-    sass: 'page/**/*.scss',
-    cssOutput: `page`
+    sass: 'pages/**/*.scss',
+    cssOutput: `pages`
   }
 }
 
