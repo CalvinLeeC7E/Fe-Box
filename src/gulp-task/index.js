@@ -1,5 +1,6 @@
 const gulpProcessDev = require('./index.dev')
 const gulpProcessPro = require('./index.pro')
+const gulpProcessMiniDev = require('./mini-program.dev')
 const path = require('path')
 const config = require('./config')
 
@@ -55,5 +56,10 @@ module.exports = {
     config.pro.baseDir = dir
     converPath(dir, config.pro)
     gulpProcessPro(config.pro)
+  },
+  wxssDev (dir) {
+    config.wxssDev.baseDir = dir
+    converPath(dir, config.wxssDev)
+    gulpProcessMiniDev(config.wxssDev)
   }
 }

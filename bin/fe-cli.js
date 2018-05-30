@@ -23,4 +23,11 @@ program
     gulpProcess.pro(dir)
   })
 
+// wxss-dev 用来处理小程序
+program
+  .command('wxss-dev [targetDir]')
+  .action((dir = '.') => {
+    gulpProcess.wxssDev(dir)
+  })
+
 program.parse(process.argv)

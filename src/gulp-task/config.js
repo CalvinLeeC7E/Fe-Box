@@ -14,6 +14,11 @@ const config = {
     allCss: `${proBaseDir}/css/**/*.css`,
     outputBaseDir: proBaseDir,
     cssOutput: `${proBaseDir}/css`
+  },
+  wxssDev: {
+    baseDir: '.',
+    sass: 'page/**/*.scss',
+    cssOutput: `page`
   }
 }
 
