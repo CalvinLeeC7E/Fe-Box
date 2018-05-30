@@ -23,7 +23,7 @@ function watch (config) {
 function sassLoader (config) {
   // sass -> wxss
   gulp.src(config.sass)
-    .pipe(gulpSass())
+    .pipe(gulpSass.sync().on('error', gulpSass.logError))
     .pipe(gulpRename({
       extname: '.wxss'
     }))
