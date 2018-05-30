@@ -32,7 +32,7 @@ function delDiv (config) {
 function sassLoader (config) {
   // sass -> css -> autoprefixer
   gulp.src(config.sass)
-    .pipe(gulpSass.sync().on('error', gulpSass.logError)
+    .pipe(gulpSass.sync().on('error', gulpSass.logError))
     .pipe(gulpPostcss([gulpAutoprefixer()]))
     .pipe(gulp.dest(config.cssOutput))
   utlis.print('Sass rebuild finish!')
