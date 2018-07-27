@@ -4,6 +4,7 @@ const gulpPostcss = require('gulp-postcss')
 const gulpAutoprefixer = require('autoprefixer')
 const del = require('del')
 const utlis = require('../../utils/index')
+const GulpTools = require('../../utils/gulp-tools')
 let bsHandler = null
 
 function index (config, bs) {
@@ -32,7 +33,7 @@ function delDiv (config) {
 function sassLoader (config) {
   // sass -> css -> autoprefixer
   gulp.src(config.sass)
-    .pipe(gulpSass.sync().on('error', gulpSass.logError))
+    .pipe(gulpSass.sync().on('error', GulpTools.onError))
     .pipe(gulpPostcss([gulpAutoprefixer()]))
     .pipe(gulp.dest(config.cssOutput))
   utlis.print('Sass rebuild finish!')

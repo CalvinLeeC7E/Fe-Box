@@ -5,6 +5,7 @@ const gulpAutoprefixer = require('autoprefixer')
 const gulpCleanCss = require('gulp-clean-css')
 const del = require('del')
 const utils = require('../../utils/index')
+const GulpTools = require('../../utils/gulp-tools')
 
 function index (config) {
   utils.print('CSS dist start...')
@@ -24,7 +25,7 @@ function delDiv (config) {
 function sassLoader (config) {
   // sass -> css -> autoprefixer -> mini
   gulp.src(config.sass)
-    .pipe(gulpSass())
+    .pipe(gulpSass.sync().on('error', GulpTools.onError))
     .pipe(gulpPostcss([gulpAutoprefixer()]))
     .pipe(gulpCleanCss())
     .pipe(gulp.dest(config.cssOutput))

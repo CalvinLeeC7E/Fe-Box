@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const gulpSass = require('gulp-sass')
 const gulpRename = require('gulp-rename')
 const utils = require('../../utils/index')
+const GulpTools = require('../../utils/gulp-tools')
 
 function index (config) {
   utils.print('Mini-Program Sass loader start...')
@@ -23,7 +24,7 @@ function watch (config) {
 function sassLoader (config) {
   // sass -> wxss
   gulp.src(config.sass)
-    .pipe(gulpSass.sync().on('error', gulpSass.logError))
+    .pipe(gulpSass.sync().on('error', GulpTools.onError))
     .pipe(gulpRename({
       extname: '.wxss'
     }))
