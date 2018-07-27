@@ -1,7 +1,7 @@
 ![VERSION](https://img.shields.io/badge/VERSION-1.0.4-blue.svg)
 ![VERSION](https://img.shields.io/badge/node-%3E%3D8.0.0-brightgreen.svg)
 
-# fe-cli
+# Fe-Box
 
 前端命令行工具
 
@@ -12,12 +12,12 @@ node 版本需要 8.0 以上
 
 ### 安装
 ```bash
-cnpm i -g git+ssh://git@code.yuanbei.biz:front-end/fe-cli.git
+npm i -g https://github.com/llb421270473/Fe-Box.git
 ```
 
 ### 使用
 ```bash
-fe-cli <command> [options]
+fe-box <command> [options]
 ```
 
 ### 关于样式构建
@@ -41,7 +41,7 @@ sass -> wxss
 css-dev
 
 ```bash
-fe-cli css-dev [targetDir]
+fe-box css-dev [targetDir]
 ```
 > options：
 >
@@ -50,7 +50,7 @@ fe-cli css-dev [targetDir]
 css-dist
 
 ```bash
-fe-cli css-dist [targetDir]
+fe-box css-dist [targetDir]
 ```
 > options：
 >
@@ -59,7 +59,7 @@ fe-cli css-dist [targetDir]
 wxss-dev
 
 ```bash
-fe-cli wxss-dev [targetDir]
+fe-box wxss-dev [targetDir]
 ```
 > options：
 >

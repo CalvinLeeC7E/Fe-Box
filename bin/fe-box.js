@@ -5,7 +5,7 @@ const gulpProcess = require('../src/gulp-task/index')
 
 program
   .version(require('../package.json').version)
-  .description('i200 fe-cli')
+  .description('fe-box')
 
 // css-dev 用来构建开发版css
 program
